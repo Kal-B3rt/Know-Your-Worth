@@ -8,17 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		3CD196292B15228600091B8F /* Know_Your_WorthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196282B15228600091B8F /* Know_Your_WorthApp.swift */; };
-		3CD1962B2B15228600091B8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1962A2B15228600091B8F /* ContentView.swift */; };
 		3CD1962D2B15228700091B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CD1962C2B15228700091B8F /* Assets.xcassets */; };
 		3CD196302B15228700091B8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CD1962F2B15228700091B8F /* Preview Assets.xcassets */; };
+		3CD196562B15242600091B8F /* TabEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196552B15242600091B8F /* TabEnum.swift */; };
+		3CD196592B15244C00091B8F /* TimeSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196582B15244C00091B8F /* TimeSheetModel.swift */; };
+		3CD1965C2B15246600091B8F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1965B2B15246600091B8F /* Double.swift */; };
+		3CD1965E2B15247B00091B8F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1965D2B15247B00091B8F /* Color.swift */; };
+		3CD196602B15249100091B8F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1965F2B15249100091B8F /* Date.swift */; };
+		3CD196642B1524D500091B8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196632B1524D500091B8F /* HomeView.swift */; };
+		3CD196672B15252900091B8F /* dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196662B15252900091B8F /* dashboard.swift */; };
+		3CD1966A2B15256100091B8F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196692B15256100091B8F /* ChartView.swift */; };
+		3CD1966C2B15257D00091B8F /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1966B2B15257D00091B8F /* ChartViewModel.swift */; };
+		3CD1966F2B1525DA00091B8F /* TimerFullScreenCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1966E2B1525DA00091B8F /* TimerFullScreenCover.swift */; };
+		3CD196722B15262C00091B8F /* TimeTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196712B15262C00091B8F /* TimeTrackerView.swift */; };
+		3CD196752B1526AB00091B8F /* EditTimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196742B1526AB00091B8F /* EditTimeSheetView.swift */; };
+		3CD196782B15272400091B8F /* TimeSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196772B15272400091B8F /* TimeSheetRowView.swift */; };
+		3CD1967A2B15274F00091B8F /* TimeSheetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196792B15274F00091B8F /* TimeSheetList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CD196252B15228600091B8F /* Know Your Worth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Know Your Worth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD196282B15228600091B8F /* Know_Your_WorthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Know_Your_WorthApp.swift; sourceTree = "<group>"; };
-		3CD1962A2B15228600091B8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CD1962C2B15228700091B8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CD1962F2B15228700091B8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3CD196552B15242600091B8F /* TabEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabEnum.swift; sourceTree = "<group>"; };
+		3CD196582B15244C00091B8F /* TimeSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetModel.swift; sourceTree = "<group>"; };
+		3CD1965B2B15246600091B8F /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		3CD1965D2B15247B00091B8F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3CD1965F2B15249100091B8F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		3CD196632B1524D500091B8F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3CD196662B15252900091B8F /* dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboard.swift; sourceTree = "<group>"; };
+		3CD196692B15256100091B8F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		3CD1966B2B15257D00091B8F /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		3CD1966E2B1525DA00091B8F /* TimerFullScreenCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFullScreenCover.swift; sourceTree = "<group>"; };
+		3CD196712B15262C00091B8F /* TimeTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerView.swift; sourceTree = "<group>"; };
+		3CD196742B1526AB00091B8F /* EditTimeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeSheetView.swift; sourceTree = "<group>"; };
+		3CD196772B15272400091B8F /* TimeSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetRowView.swift; sourceTree = "<group>"; };
+		3CD196792B15274F00091B8F /* TimeSheetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +77,11 @@
 		3CD196272B15228600091B8F /* Know Your Worth */ = {
 			isa = PBXGroup;
 			children = (
-				3CD196282B15228600091B8F /* Know_Your_WorthApp.swift */,
-				3CD1962A2B15228600091B8F /* ContentView.swift */,
+				3CD196612B1524B300091B8F /* Views */,
+				3CD1965A2B15245B00091B8F /* Extensions */,
+				3CD196572B15243400091B8F /* Models */,
+				3CD196542B15240F00091B8F /* Enum */,
+				3CD196522B1523D800091B8F /* App */,
 				3CD1962C2B15228700091B8F /* Assets.xcassets */,
 				3CD1962E2B15228700091B8F /* Preview Content */,
 			);
@@ -65,6 +94,112 @@
 				3CD1962F2B15228700091B8F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3CD196522B1523D800091B8F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196282B15228600091B8F /* Know_Your_WorthApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3CD196542B15240F00091B8F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196552B15242600091B8F /* TabEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		3CD196572B15243400091B8F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196582B15244C00091B8F /* TimeSheetModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3CD1965A2B15245B00091B8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3CD1965B2B15246600091B8F /* Double.swift */,
+				3CD1965D2B15247B00091B8F /* Color.swift */,
+				3CD1965F2B15249100091B8F /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3CD196612B1524B300091B8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196762B1526E000091B8F /* TimeSheetList */,
+				3CD196732B15268900091B8F /* EditTimeSheet */,
+				3CD196702B15260E00091B8F /* NewTimer */,
+				3CD1966D2B1525BB00091B8F /* TimerFullScreenCover */,
+				3CD196622B1524C100091B8F /* Home */,
+				3CD196652B15250F00091B8F /* Dashboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CD196622B1524C100091B8F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196632B1524D500091B8F /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3CD196652B15250F00091B8F /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196682B15254C00091B8F /* ChartView */,
+				3CD196662B15252900091B8F /* dashboard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		3CD196682B15254C00091B8F /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196692B15256100091B8F /* ChartView.swift */,
+				3CD1966B2B15257D00091B8F /* ChartViewModel.swift */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
+		3CD1966D2B1525BB00091B8F /* TimerFullScreenCover */ = {
+			isa = PBXGroup;
+			children = (
+				3CD1966E2B1525DA00091B8F /* TimerFullScreenCover.swift */,
+			);
+			path = TimerFullScreenCover;
+			sourceTree = "<group>";
+		};
+		3CD196702B15260E00091B8F /* NewTimer */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196712B15262C00091B8F /* TimeTrackerView.swift */,
+			);
+			path = NewTimer;
+			sourceTree = "<group>";
+		};
+		3CD196732B15268900091B8F /* EditTimeSheet */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196742B1526AB00091B8F /* EditTimeSheetView.swift */,
+			);
+			path = EditTimeSheet;
+			sourceTree = "<group>";
+		};
+		3CD196762B1526E000091B8F /* TimeSheetList */ = {
+			isa = PBXGroup;
+			children = (
+				3CD196772B15272400091B8F /* TimeSheetRowView.swift */,
+				3CD196792B15274F00091B8F /* TimeSheetList.swift */,
+			);
+			path = TimeSheetList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +272,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CD1962B2B15228600091B8F /* ContentView.swift in Sources */,
+				3CD196782B15272400091B8F /* TimeSheetRowView.swift in Sources */,
+				3CD196562B15242600091B8F /* TabEnum.swift in Sources */,
+				3CD196642B1524D500091B8F /* HomeView.swift in Sources */,
+				3CD196722B15262C00091B8F /* TimeTrackerView.swift in Sources */,
+				3CD196672B15252900091B8F /* dashboard.swift in Sources */,
+				3CD196752B1526AB00091B8F /* EditTimeSheetView.swift in Sources */,
+				3CD196602B15249100091B8F /* Date.swift in Sources */,
+				3CD196592B15244C00091B8F /* TimeSheetModel.swift in Sources */,
+				3CD1966C2B15257D00091B8F /* ChartViewModel.swift in Sources */,
+				3CD1966A2B15256100091B8F /* ChartView.swift in Sources */,
+				3CD1966F2B1525DA00091B8F /* TimerFullScreenCover.swift in Sources */,
+				3CD1967A2B15274F00091B8F /* TimeSheetList.swift in Sources */,
+				3CD1965C2B15246600091B8F /* Double.swift in Sources */,
+				3CD1965E2B15247B00091B8F /* Color.swift in Sources */,
 				3CD196292B15228600091B8F /* Know_Your_WorthApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
