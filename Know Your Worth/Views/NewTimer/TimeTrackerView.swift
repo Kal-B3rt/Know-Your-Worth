@@ -28,123 +28,129 @@ struct TimeTrackerView: View {
     @State var inActiveTime: Date? = nil
     
     var body: some View {
-        NavigationStack{
-            VStack(alignment: .center) {
-                Text("Time Tracker")
-                    .foregroundStyle(.primary)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                
-                Spacer()
-                
-                //Timer
-                Text("\(time.timeFormattedString())")
-                    .foregroundStyle(isTimerRunning ? Color.accentColor : Color.secondary)
-                
-                //Rate row
-                HStack {
-                    Image(systemName: "arrow.down")
-                        .fontWeight(.black)
-                        .frame(width:50, height: 50)
-                        .background(.red)
-                        .foregroundStyle(.white)
-                        .clipShape(Circle())
-                        .onTapGesture {
-                            rate -= 0.25
-                            totalEarned()
-                        }
-                    
-                    Text("\(rate.toCurrency())")
-                        .frame(width: 150, height: 75)
-                        .font(.title.bold())
-                        .padding(.horizontal)
+        
+            NavigationStack{
+                ZStack {
+                    Rectangle()
+                        .fill(Color.appColor)
+                                .ignoresSafeArea()
+                VStack(alignment: .center) {
+                    Text("Time Tracker")
+                        .foregroundStyle(.primary)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
                     
                     
-                    Image(systemName: "arrow.up")
-                        .fontWeight(.black)
-                        .frame(width:50, height: 50)
-                        .background(.green)
-                        .foregroundStyle(.white)
-                        .clipShape(Circle())
-                        .onTapGesture {
-                            rate += 0.25
-                            totalEarned()
-                        }
-                }
-                
-                //Current Total
-                Text("\(total.toCurrency())")
-                    .font(.largeTitle.bold())
-                    .foregroundStyle(.green)
-                    .padding()
-                
-                
-                
-                //Button Row
-                HStack {
+                    Spacer()
                     
-                    Button {
-                        firstTime = false
-                        isTimerRunning.toggle()
-                    } label: {
-                        Text(isTimerRunning ? "Pause" : "Start")
-                            .foregroundColor(.white)
-                            .frame(width: 100, height: 44)
-                            .foregroundStyle(isTimerRunning ? Color.white : Color.green)
-                            .background(Color(isTimerRunning ? Color.red : Color.green))
-                            .cornerRadius(5)
+                    //Timer
+                    Text("\(time.timeFormattedString())")
+                        .foregroundStyle(isTimerRunning ? Color.accentColor : Color.secondary)
+                    
+                    //Rate row
+                    HStack {
+                        Image(systemName: "arrow.down")
+                            .fontWeight(.black)
+                            .frame(width:50, height: 50)
+                            .background(.red)
+                            .foregroundStyle(.white)
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                rate -= 0.25
+                                totalEarned()
+                            }
+                        
+                        Text("\(rate.toCurrency())")
+                            .frame(width: 150, height: 75)
+                            .font(.title.bold())
                             .padding(.horizontal)
-                            .shadow(radius: 3)
+                        
+                        
+                        Image(systemName: "arrow.up")
+                            .fontWeight(.black)
+                            .frame(width:50, height: 50)
+                            .background(.green)
+                            .foregroundStyle(.white)
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                rate += 0.25
+                                totalEarned()
+                            }
                     }
                     
+                    //Current Total
+                    Text("\(total.toCurrency())")
+                        .font(.largeTitle.bold())
+                        .foregroundStyle(.green)
+                        .padding()
                     
-                    Button("Submit") {
-                        submitTimeSheet()
-                        resetPage()
-                    }
-                    .disabled(isTimerRunning || firstTime == true )
-                    .foregroundColor(.white)
-                    .frame(width: 100, height: 44)
-                    .background(Color(isTimerRunning || firstTime == true ? Color.gray : Color.blue))
-                    .cornerRadius(5)
-                    .padding(.horizontal)
-                    .shadow(radius: 3)
                     
-                }
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Button(action: {resetPage()}, label: {
-                            Label("Add Item", systemImage: "arrow.counterclockwise")
-                            
-                        })
-                    }
-                }
-                .onReceive(timer) { _ in
-                    if isTimerRunning == true {
-                        time += 1
-                        totalEarned()
-                    }
-                }
-                .onChange(of: scenePhase) { newPhase in
-                    switch newPhase {
-                    case .active:
-                        if let inActiveTime = inActiveTime {
-                            let currentTime = Date.now
-                            let backgroundTimeDifference = currentTime.timeIntervalSince(inActiveTime)
-                            time += backgroundTimeDifference
-                            isTimerRunning = true
+                    
+                    //Button Row
+                    HStack {
+                        
+                        Button {
+                            firstTime = false
+                            isTimerRunning.toggle()
+                        } label: {
+                            Text(isTimerRunning ? "Pause" : "Start")
+                                .foregroundColor(.white)
+                                .frame(width: 100, height: 44)
+                                .foregroundStyle(isTimerRunning ? Color.white : Color.green)
+                                .background(Color(isTimerRunning ? Color.red : Color.green))
+                                .cornerRadius(5)
+                                .padding(.horizontal)
+                                .shadow(radius: 3)
                         }
-                    case .background:
-                        inActiveTime = Date.now
-                        isTimerRunning = false
-                    default:
-                        break
+                        
+                        
+                        Button("Submit") {
+                            submitTimeSheet()
+                            resetPage()
+                        }
+                        .disabled(isTimerRunning || firstTime == true )
+                        .foregroundColor(.white)
+                        .frame(width: 100, height: 44)
+                        .background(Color(isTimerRunning || firstTime == true ? Color.gray : Color.blue))
+                        .cornerRadius(5)
+                        .padding(.horizontal)
+                        .shadow(radius: 3)
+                        
                     }
+                    .toolbar{
+                        ToolbarItem(placement: .navigationBarTrailing){
+                            Button(action: {resetPage()}, label: {
+                                Label("Add Item", systemImage: "arrow.counterclockwise")
+                                
+                            })
+                        }
+                    }
+                    .onReceive(timer) { _ in
+                        if isTimerRunning == true {
+                            time += 1
+                            totalEarned()
+                        }
+                    }
+                    .onChange(of: scenePhase) { newPhase in
+                        switch newPhase {
+                        case .active:
+                            if let inActiveTime = inActiveTime {
+                                let currentTime = Date.now
+                                let backgroundTimeDifference = currentTime.timeIntervalSince(inActiveTime)
+                                time += backgroundTimeDifference
+                                isTimerRunning = true
+                            }
+                        case .background:
+                            inActiveTime = Date.now
+                            isTimerRunning = false
+                        default:
+                            break
+                        }
+                    }
+                    Spacer()
                 }
-                Spacer()
+                
             }
-            
         }
     }
     

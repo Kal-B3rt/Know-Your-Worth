@@ -11,26 +11,32 @@ import SwiftData
 struct dashboard: View {
     
     var body: some View {
-        VStack(alignment: .center){
+        ZStack {
+            Rectangle()
+                .fill(Color.appColor)
+                        .ignoresSafeArea()
             
-            Text("DASHBOARD")
-                .fontWeight(.bold)
-                .font(.title)
-            
-            Text("Past Week")
-                .font(.caption)
-            
-            
-            ChartView()
-                .frame(height: 150)
-                .padding()
-            
+            VStack(alignment: .center){
+                
+                Text("DASHBOARD")
+                    .fontWeight(.bold)
+                    .font(.title)
+                
+                Text("Past Week")
+                    .font(.caption)
+                
+                
+                ChartView()
+                    .frame(height: 150)
+                    .padding()
+                
 
-            
-            Divider()
-            
-            
-            Spacer()
+                
+                Divider()
+                
+                
+                Spacer()
+            }
         }
     }
 }

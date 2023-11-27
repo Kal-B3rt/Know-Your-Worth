@@ -22,6 +22,7 @@ struct ChartView: View {
             
             Text("You've earned \(viewModel.sevenDayTotal.toCurrency()) this week.")
                 .bold()
+                .padding(.top)
                 
         }
         .onAppear {
@@ -31,7 +32,6 @@ struct ChartView: View {
     }
     
     let formatter = DateFormatter()
-    
     
     func weekday(for number: Int) -> String {
         let calendar = Calendar.current

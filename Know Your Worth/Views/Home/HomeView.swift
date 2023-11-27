@@ -18,17 +18,18 @@ struct HomeView: View {
             dashboard()
                 .tabItem { Label("Dashboard", systemImage: "chart.bar") }
                 .tag(TabEnum.dashboard)
-                
+            
             
             TimeTrackerView(tag: $selectedTab)
                 .tabItem { Label("New Timer", systemImage: "clock") }
                 .tag(TabEnum.newTimer)
-                
+            
             
             TimeSheetList()
                 .tabItem { Label("Time Sheets", systemImage: "list.dash") }
                 .tag(TabEnum.listView)
-                
+            
+            
         }
     }
 }

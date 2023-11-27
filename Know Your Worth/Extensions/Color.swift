@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension Color {
+    
+    static let appColor = Color("AppBackgroundColor")
+    
+}
