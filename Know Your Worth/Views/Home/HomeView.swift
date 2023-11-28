@@ -16,8 +16,9 @@ struct HomeView: View {
         
         TabView(selection: $selectedTab){
             dashboard()
-                .tabItem { Label("Dashboard", systemImage: "chart.bar") }
+                .tabItem { Label("Dashboard", systemImage: "chart.bar")}
                 .tag(TabEnum.dashboard)
+                
             
             
             TimeTrackerView(tag: $selectedTab)

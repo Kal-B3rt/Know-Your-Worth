@@ -33,6 +33,9 @@ struct TimeSheetList: View {
                             
                     }
                 }
+                .listRowBackground(Color.white.opacity(0.1))
+                .listRowSeparatorTint(.appColor, edges: .bottom)
+                
                 Section("Marked Complete") {
                     ForEach(completedSheets) { timesheet in
                         NavigationLink(value: timesheet) {
@@ -43,7 +46,13 @@ struct TimeSheetList: View {
                     
                     
                 }
+                .listRowBackground(Color.white.opacity(0.1))
+                .listRowSeparatorTint(.appColor, edges: .bottom)
             }
+            .scrollContentBackground(.hidden)
+            .background(.appBackground)
+            .foregroundStyle(.white)
+            
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -62,6 +71,11 @@ struct TimeSheetList: View {
             .navigationDestination(for: TimeSheet.self, destination: EditTimeSheetView.init)
         }
     }
+    
+    init() {
+     // Large Navigation Title
+     UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+   }
     
     private func addItem() {
         let newTimeSheet = TimeSheet()

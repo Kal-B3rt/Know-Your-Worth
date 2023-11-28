@@ -34,18 +34,22 @@ struct TimeTrackerView: View {
                     Rectangle()
                         .fill(Color.appColor)
                                 .ignoresSafeArea()
-                VStack(alignment: .center) {
-                    Text("Time Tracker")
-                        .foregroundStyle(.primary)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
                     
+                VStack(alignment: .center) {
+                            Text("TIME TRACKER")
+                                .foregroundStyle(.white)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            
+                            Divider()
+                        .overlay(.white)
+                        .frame(maxWidth: 150)
                     
                     Spacer()
                     
                     //Timer
                     Text("\(time.timeFormattedString())")
-                        .foregroundStyle(isTimerRunning ? Color.accentColor : Color.secondary)
+                        .foregroundStyle(isTimerRunning ? Color.red.opacity(0.8) : Color.white.opacity(0.5))
                     
                     //Rate row
                     HStack {
@@ -64,6 +68,7 @@ struct TimeTrackerView: View {
                             .frame(width: 150, height: 75)
                             .font(.title.bold())
                             .padding(.horizontal)
+                            .foregroundStyle(.white)
                         
                         
                         Image(systemName: "arrow.up")
@@ -133,6 +138,7 @@ struct TimeTrackerView: View {
                     }
                     .onChange(of: scenePhase) { newPhase in
                         switch newPhase {
+                            
                         case .active:
                             if let inActiveTime = inActiveTime {
                                 let currentTime = Date.now
@@ -141,6 +147,7 @@ struct TimeTrackerView: View {
                                 isTimerRunning = true
                             }
                         case .background:
+                            guard isTimerRunning else { return }
                             inActiveTime = Date.now
                             isTimerRunning = false
                         default:

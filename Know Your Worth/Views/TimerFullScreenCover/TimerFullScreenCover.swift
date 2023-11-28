@@ -16,7 +16,7 @@ struct TimerFullScreenCover: View {
     
     @Environment(\.dismiss) var dismiss
     
-
+    
     @State var pressDown = false
     @State var pressUp = false
     
@@ -33,18 +33,26 @@ struct TimerFullScreenCover: View {
     
     
     var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(Color.appColor)
+                .ignoresSafeArea()
             VStack(alignment: .center) {
-                Text("Time Tracker")
-                    .foregroundStyle(.primary)
+                Text("TIME TRACKER")
+                    .foregroundStyle(.white)
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                
+                Divider()
+                    .overlay(.white)
+                    .frame(maxWidth: 150)
                 
                 
                 Spacer()
                 
                 //Timer
                 Text("\(time.timeFormattedString())")
-                    .foregroundStyle(isTimerRunning ? Color.accentColor : Color.secondary)
+                    .foregroundStyle(isTimerRunning ? Color.red.opacity(0.8) : Color.white.opacity(0.5))
                 
                 //Rate row
                 HStack {
@@ -63,6 +71,7 @@ struct TimerFullScreenCover: View {
                         .frame(width: 150, height: 75)
                         .font(.title.bold())
                         .padding(.horizontal)
+                        .foregroundStyle(.white)
                     
                     
                     Image(systemName: "arrow.up")
@@ -75,7 +84,7 @@ struct TimerFullScreenCover: View {
                             rate += 0.25
                             totalEarned()
                         }
-                        
+                    
                 }
                 
                 //Current Total
@@ -126,12 +135,13 @@ struct TimerFullScreenCover: View {
                 Spacer()
             }
             .onAppear {
-                        // Initialize rate, time, and total from timeSheet
-                        rate = timeSheet.rate
-                        time = (timeSheet.time * 60 * 60)
-                        total = timeSheet.total
-                        totalEarned()
-                    }
+                // Initialize rate, time, and total from timeSheet
+                rate = timeSheet.rate
+                time = (timeSheet.time * 60 * 60)
+                total = timeSheet.total
+                totalEarned()
+            }
+        }
         
     }
     func submitTimeSheet() {
@@ -144,11 +154,11 @@ struct TimerFullScreenCover: View {
         dismiss()
         
     }
-        func totalEarned() {
-            let totalEarned = ((time * rate) / 60) / 60
-            
-            total = totalEarned
-        }
+    func totalEarned() {
+        let totalEarned = ((time * rate) / 60) / 60
+        
+        total = totalEarned
+    }
 }
 
 #Preview {
