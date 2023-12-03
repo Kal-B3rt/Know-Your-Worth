@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 import SwiftData
 
 struct EditTimeSheetView: View {
@@ -28,20 +27,21 @@ struct EditTimeSheetView: View {
     }()
     
     var body: some View {
-        NavigationStack {
             Form{
                 Section("The Basics") {
                     TextField("Project Name", text: $timeSheet.sheetName)
-                        .focused($keyboardFocused)
                     TextField("Details", text: $timeSheet.sheetDescription, axis: .vertical)
+
                     DatePicker("Pick a date", selection: $timeSheet.creationDate, displayedComponents: [.date])
                 }
+                .listRowBackground(Color.white.opacity(0.1))
+                .listRowSeparatorTint(.appColor, edges: .bottom)
                 
                 Section("Rate and Time"){
                     TextField("Rate", value: $timeSheet.rate, format: .currency(code: "USD"))
                         .keyboardType(.decimalPad)
-                        .listRowBackground(Color.white.opacity(0.1))
-                        .listRowSeparatorTint(.appColor, edges: .bottom)
+
+                       
                     HStack {
                         Image(systemName: "clock")
                         TextField("", value: $timeSheet.time, format: .number.rounded(rule: .up))
@@ -50,13 +50,15 @@ struct EditTimeSheetView: View {
                                 timeSheet.total = calculatedTotal
                             }
                     }
-
-                    
+ 
                     Text("Example: 1.5 = 1 hour and 30 minutes")
                         .listRowBackground(Color.clear)
                         .font(.caption)
                         .opacity(0.7)
+                    
                 }
+                .listRowBackground(Color.white.opacity(0.1))
+                .listRowSeparatorTint(.appColor, edges: .bottom)
                 
                 Section("Current Total") {
                     Text("\(calculatedTotal.toCurrency())")
@@ -81,21 +83,27 @@ struct EditTimeSheetView: View {
                     }
                     
                 }
+                .listRowBackground(Color.white.opacity(0.1))
+                .listRowSeparatorTint(.appColor, edges: .bottom)
+        }
+            .scrollContentBackground(.hidden)
+            .background(.appBackground)
+            .foregroundStyle(.white)
+            .toolbar{
+                if keyboardFocused == true {
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button(action: {keyboardFocused = false}, label: {
+                            Text("Done")
+                            
+                        })
+                    }
+                }
             }
             .navigationTitle("Edit Time Sheet")
             .navigationBarTitleDisplayMode(.inline)
             .fullScreenCover(isPresented: $isTimerFullScreenCoverPresented) {
                 TimerFullScreenCover(timeSheet: timeSheet)
             }
-            .toolbar{
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button(action: {keyboardFocused = false}, label: {
-                        Label("Add Item", systemImage: "checkmark")
-                        
-                    })
-                }
-            }
-        }
     }
 }
 

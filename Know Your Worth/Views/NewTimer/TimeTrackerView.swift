@@ -138,15 +138,15 @@ struct TimeTrackerView: View {
                     }
                     .onChange(of: scenePhase) { newPhase in
                         switch newPhase {
-                            
                         case .active:
-                            if let inActiveTime = inActiveTime {
+                            if let inActiveTime = inActiveTime, !isTimerRunning {
                                 let currentTime = Date.now
                                 let backgroundTimeDifference = currentTime.timeIntervalSince(inActiveTime)
                                 time += backgroundTimeDifference
                                 isTimerRunning = true
+                                resetInActiveTime()
                             }
-                        case .background:
+                        case .inactive, .background:
                             guard isTimerRunning else { return }
                             inActiveTime = Date.now
                             isTimerRunning = false
@@ -161,6 +161,9 @@ struct TimeTrackerView: View {
         }
     }
     
+    private func resetInActiveTime() {
+        inActiveTime = nil
+    }
     
     func submitTimeSheet() {
         

@@ -12,4 +12,8 @@ extension Color {
     
     static let appColor = Color("AppBackgroundColor")
     
+    static let itembackground = Color(.white.opacity(0.1))
+    
+    static let appGreenSecondary = Color("greenSecondary")
+    
 }

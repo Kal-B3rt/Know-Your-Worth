@@ -21,18 +21,25 @@ struct dashboard: View {
                 Text("DASHBOARD")
                     .fontWeight(.bold)
                     .font(.title)
+                    .foregroundStyle(.white)
                 
                 Text("Past Week")
                     .font(.caption)
+                    .foregroundStyle(.white.opacity(0.7))
                 
                 
                 ChartView()
                     .frame(height: 150)
                     .padding()
+                    .foregroundStyle(Color.appGreenSecondary)
                 
 
-                
                 Divider()
+                    .overlay(.white)
+                    .frame(height: 10)
+                
+                
+                OpenItemList()
                 
                 
                 Spacer()

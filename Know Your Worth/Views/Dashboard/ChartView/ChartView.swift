@@ -19,6 +19,7 @@ struct ChartView: View {
                 BarMark(x: .value("Day", weekday(for: $0.number)),
                         y: .value("Earned", $0.earned))
             }
+            .tint(.white)
             
             Text("You've earned \(viewModel.sevenDayTotal.toCurrency()) this week.")
                 .bold()

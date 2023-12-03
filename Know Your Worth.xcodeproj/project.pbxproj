@@ -24,6 +24,10 @@
 		3CD196752B1526AB00091B8F /* EditTimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196742B1526AB00091B8F /* EditTimeSheetView.swift */; };
 		3CD196782B15272400091B8F /* TimeSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196772B15272400091B8F /* TimeSheetRowView.swift */; };
 		3CD1967A2B15274F00091B8F /* TimeSheetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD196792B15274F00091B8F /* TimeSheetList.swift */; };
+		3CEB515C2B15A448006BB13C /* FocusedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB515B2B15A448006BB13C /* FocusedState.swift */; };
+		3CEB51632B1BDB5F006BB13C /* OpenItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB51622B1BDB5F006BB13C /* OpenItemList.swift */; };
+		3CEB51652B1BDB7E006BB13C /* OpenItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB51642B1BDB7E006BB13C /* OpenItemCard.swift */; };
+		3CEB51672B1C2EB2006BB13C /* EditSheetCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB51662B1C2EB2006BB13C /* EditSheetCoverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		3CD196742B1526AB00091B8F /* EditTimeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeSheetView.swift; sourceTree = "<group>"; };
 		3CD196772B15272400091B8F /* TimeSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetRowView.swift; sourceTree = "<group>"; };
 		3CD196792B15274F00091B8F /* TimeSheetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetList.swift; sourceTree = "<group>"; };
+		3CEB515B2B15A448006BB13C /* FocusedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedState.swift; sourceTree = "<group>"; };
+		3CEB51622B1BDB5F006BB13C /* OpenItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemList.swift; sourceTree = "<group>"; };
+		3CEB51642B1BDB7E006BB13C /* OpenItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemCard.swift; sourceTree = "<group>"; };
+		3CEB51662B1C2EB2006BB13C /* EditSheetCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSheetCoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3CD196552B15242600091B8F /* TabEnum.swift */,
+				3CEB515B2B15A448006BB13C /* FocusedState.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -136,7 +145,7 @@
 				3CD196762B1526E000091B8F /* TimeSheetList */,
 				3CD196732B15268900091B8F /* EditTimeSheet */,
 				3CD196702B15260E00091B8F /* NewTimer */,
-				3CD1966D2B1525BB00091B8F /* TimerFullScreenCover */,
+				3CD1966D2B1525BB00091B8F /* Full Screen Covers */,
 				3CD196622B1524C100091B8F /* Home */,
 				3CD196652B15250F00091B8F /* Dashboard */,
 			);
@@ -154,6 +163,7 @@
 		3CD196652B15250F00091B8F /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				3CEB51612B1BDABA006BB13C /* Open Items */,
 				3CD196682B15254C00091B8F /* ChartView */,
 				3CD196662B15252900091B8F /* dashboard.swift */,
 			);
@@ -169,12 +179,13 @@
 			path = ChartView;
 			sourceTree = "<group>";
 		};
-		3CD1966D2B1525BB00091B8F /* TimerFullScreenCover */ = {
+		3CD1966D2B1525BB00091B8F /* Full Screen Covers */ = {
 			isa = PBXGroup;
 			children = (
 				3CD1966E2B1525DA00091B8F /* TimerFullScreenCover.swift */,
+				3CEB51662B1C2EB2006BB13C /* EditSheetCoverView.swift */,
 			);
-			path = TimerFullScreenCover;
+			path = "Full Screen Covers";
 			sourceTree = "<group>";
 		};
 		3CD196702B15260E00091B8F /* NewTimer */ = {
@@ -200,6 +211,15 @@
 				3CD196792B15274F00091B8F /* TimeSheetList.swift */,
 			);
 			path = TimeSheetList;
+			sourceTree = "<group>";
+		};
+		3CEB51612B1BDABA006BB13C /* Open Items */ = {
+			isa = PBXGroup;
+			children = (
+				3CEB51622B1BDB5F006BB13C /* OpenItemList.swift */,
+				3CEB51642B1BDB7E006BB13C /* OpenItemCard.swift */,
+			);
+			path = "Open Items";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +298,9 @@
 				3CD196722B15262C00091B8F /* TimeTrackerView.swift in Sources */,
 				3CD196672B15252900091B8F /* dashboard.swift in Sources */,
 				3CD196752B1526AB00091B8F /* EditTimeSheetView.swift in Sources */,
+				3CEB51652B1BDB7E006BB13C /* OpenItemCard.swift in Sources */,
 				3CD196602B15249100091B8F /* Date.swift in Sources */,
+				3CEB515C2B15A448006BB13C /* FocusedState.swift in Sources */,
 				3CD196592B15244C00091B8F /* TimeSheetModel.swift in Sources */,
 				3CD1966C2B15257D00091B8F /* ChartViewModel.swift in Sources */,
 				3CD1966A2B15256100091B8F /* ChartView.swift in Sources */,
@@ -286,7 +308,9 @@
 				3CD1967A2B15274F00091B8F /* TimeSheetList.swift in Sources */,
 				3CD1965C2B15246600091B8F /* Double.swift in Sources */,
 				3CD1965E2B15247B00091B8F /* Color.swift in Sources */,
+				3CEB51672B1C2EB2006BB13C /* EditSheetCoverView.swift in Sources */,
 				3CD196292B15228600091B8F /* Know_Your_WorthApp.swift in Sources */,
+				3CEB51632B1BDB5F006BB13C /* OpenItemList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -87,7 +87,7 @@ import SwiftData
             }
         }
         
-        print("Debug: \(totalEarned)")
+        // print("Debug: \(totalEarned)")
         return totalEarned
     }
     
