@@ -11,15 +11,12 @@ import SwiftData
 struct TimerFullScreenCover: View {
     
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) var scenePhase
     
     @Bindable var timeSheet: TimeSheet
     
     @Environment(\.dismiss) var dismiss
-    
-    
-    @State var pressDown = false
-    @State var pressUp = false
-    
+
     @State var firstTime = true
     @State var isTimerRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -30,6 +27,8 @@ struct TimerFullScreenCover: View {
     @State var time: Double = 0.0
     @State var rate: Double = 0.0
     @State var total: Double = 0.0
+    
+    @State var inActiveTime: Date? = nil
     
     
     var body: some View {
@@ -97,7 +96,6 @@ struct TimerFullScreenCover: View {
                 
                 //Button Row
                 HStack {
-                    
                     Button {
                         firstTime = false
                         isTimerRunning.toggle()
@@ -130,7 +128,24 @@ struct TimerFullScreenCover: View {
                         time += 1
                         totalEarned()
                     }
-                    
+                }
+                .onChange(of: scenePhase) { newPhase in
+                    switch newPhase {
+                    case .active:
+                        if let inActiveTime = inActiveTime, !isTimerRunning {
+                            let currentTime = Date.now
+                            let backgroundTimeDifference = currentTime.timeIntervalSince(inActiveTime)
+                            time += backgroundTimeDifference
+                            isTimerRunning = true
+                            resetInActiveTime()
+                        }
+                    case .inactive, .background:
+                        guard isTimerRunning else { return }
+                        inActiveTime = Date.now
+                        isTimerRunning = false
+                    default:
+                        break
+                    }
                 }
                 Spacer()
             }
@@ -143,6 +158,10 @@ struct TimerFullScreenCover: View {
             }
         }
         
+    }
+    
+    func resetInActiveTime() {
+        inActiveTime = nil
     }
     func submitTimeSheet() {
         // update current timeSheet

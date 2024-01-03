@@ -14,9 +14,6 @@ struct TimeTrackerView: View {
     
     @Binding var tag: TabEnum
 
-    @State var animateUp = false
-    @State var animateDown = false
-    
     @State var firstTime = true
     @State var isTimerRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
